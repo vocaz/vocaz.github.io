@@ -1,0 +1,628 @@
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #404040;
+    color: white;
+    padding: 0;
+    padding-left: 50px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #404040;
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+#searchContainer {
+    display: flex;
+    gap: 0px;
+}
+
+#searchContainer input {
+    padding: 5px;
+    font-size: 0.75rem;
+    background-color: #303030;
+    color: #cccccc;
+}
+
+#searchContainer button {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    background-color: #404040;
+    color: #cccccc;
+    cursor: pointer;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #303030;
+    padding: 10px 20px;
+}
+
+.navBar > * {
+    pointer-events: auto; /* Restore mouse events for the child elements */
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navLinks li {
+    position: relative;
+    margin-left: 40px;
+    white-space: nowrap;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navLinks a:hover {
+    color: #ddd;
+}
+
+.dropdown {
+    position: relative; /* Keep this for proper alignment of dropdowns */
+    overflow: visible;
+}
+
+.dropdownContent {
+    display: none; /* Default hidden */
+    position: absolute; /* Position relative to the parent .dropdown */
+    top: 100%; /* Start immediately below the dropdown button */
+    left: 0; /* Align with the left edge of the dropdown button */
+    background-color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 9999999999999999999999; /* Ensure it appears above other elements */
+    min-width: 225px;
+    list-style: none;
+    opacity: 0.9;
+}
+
+.dropdownContent li {
+    margin: 0;
+}
+
+.dropdownContent a {
+    padding: 10px;
+    display: block;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdownContent a:hover {
+    background-color: #303030;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.search {
+    max-width: 1200px;
+    width: 80%;
+    min-width: 600px;
+    font-size: x-large;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.filter {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.filterLabel {
+    width: 200px;
+    display: inline-block;
+}
+
+.filterSelect {
+    width: 450px;
+    font-size: x-large;
+    display: inline-block;
+}
+
+.tagsContainer {
+    position: relative;
+    border-style: solid;
+    border-color: #404040;
+    border-radius: 15px;
+    border-width: 2px;
+    width: 100%;
+    padding: 10px;
+    top: 10px;
+    grid-template-columns: auto auto;
+}
+
+.centred {
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.tag {
+    display: inline-block;
+    border-style: solid;
+    border-color: #404040;
+    white-space: nowrap;
+    border-radius: 5px;
+    border-width: 2px;
+    margin: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0;
+    padding-bottom: 3px;
+    width: min-content;
+}
+
+.tagSelect {
+    transform: scale(1.5, 1.5);
+}
+
+.tagLabel {
+    display: inline-block;
+    font-size: smaller;
+    margin-left: 5px;
+    /*font-weight: bold;*/
+    vertical-align: middle;
+}
+
+.checkbox {
+    background-color: #fff;
+    border: solid 1px #d7d7d7;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    text-align: center;
+    width: 20px;
+    vertical-align: middle;
+    padding: 0;
+
+    svg {
+        position: relative;
+        top: -1.5px;
+        stroke: #fff;
+        pointer-events: none;
+        transform: scale(0.75, 0.75);
+    }
+  }
+  
+.positive {
+    background-color: #4aca65;
+    border-color: #43b45b;
+}
+
+.negative {
+    background-color: #dc4e4e;
+    border-color: #c74545;
+}
+
+.standardButton {
+    padding: 10px 20px;
+    background-color: #404040;
+    font-size: large;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    margin-left: 0;
+}
+
+.content {
+    min-height: 25vh;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 1000px;
+    width: 80%;
+    min-width: 600px;
+    padding: 20px;
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.box {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-style: solid;
+    border-color: #404040;
+    border-radius: 15px;
+    border-width: 3px;
+    margin: 20px;
+}
+
+.whiteBackground {
+    background-color: white;
+}
+
+.alignLeft {
+    text-align: left;
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.alignRight {
+    text-align: right;
+    display: inline;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+.toggleButton {
+    justify-content: space-between;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 5px;
+    width: 100%;
+}
+
+.tag
+.toggleButton {
+    display: inline-block;
+    width: auto;
+}
+
+.toggleButton
+.arrow {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+.extraContent {
+    display: none;
+}
+
+.isActive {
+    display: block;
+}
+
+.toggleButton.active
+.arrow {
+    transform: rotate(180deg);
+}
+
+.questionArea {
+    justify-content: center;
+    display: flex;
+}
+
+.questionImage {
+    width: 90%;
+    height: auto;
+}
+
+.smallTagsContainer {
+    margin: 10px;
+    margin-top: 0;
+    zoom: 75%;
+}
+
+.verticalSpacerSmall {
+    display: block;
+    min-height: 10px;
+}
+
+.verticalSpacer {
+    display: block;
+    min-height: 50px;
+}
+
+.horizontalSpacer {
+    display: inline-block;
+    min-width: 10px;
+}
+
+.horizontalSpacerSmall {
+    display: inline-block;
+    min-width: 5px;
+}
+
+h4 {
+    margin: 0;
+}
+
+ul {
+    margin-top: 0;
+    padding-inline-start: 20px;
+}
+
+.compact {
+    padding: 0;
+    margin: 0;
+}
+
+.invisible {
+    color: rgba(0, 0, 0, 0) !important;
+}
+
+.footer {
+    background-color: #303030;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100vw - 100px);
+    left: 50px;
+}
+
+.left-content {
+    flex-grow: 1;
+}
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#githubToken {
+    padding: 5px;
+    width: 300px;
+}
+
+.commit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.commit-button:hover {
+    background-color: #45a049;
+}
+
+.compactTagsContainer {
+    width: 90%; 
+    border-color: #aaaaaa;
+    zoom: 0.75;
+}
+
+.compactTag {
+    border-color: #aaaaaa;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.compactCheckbox {
+    display: none;
+}
+
+.compactLabel {
+    margin-left: 0;
+    /*color: #aaaaaa;*/
+}
+
+.tag:has(.compactCheckbox:checked) {
+    background-color: currentColor;
+}
+
+.compactCheckbox:checked + .tagLabel {
+    color: #303030;
+}
+
+/* Color Overrides */
+.colour0 {
+    border-color: #FFB74D; /* Soft Orange */
+    color: #FFB74D;
+}
+
+.colour1 {
+    border-color: #FF6F61; /* Coral */
+    color: #FF6F61;
+}
+
+.colour2 {
+    border-color: #90A4AE; /* Blue Gray */
+    color: #90A4AE;
+}
+
+.colour3 {
+    border-color: #4DB6AC; /* Teal */
+    color: #4DB6AC;
+}
+
+.colour4 {
+    border-color: #9575CD; /* Lavender */
+    color: #9575CD;
+}
+
+.colour5 {
+    border-color: #F06292; /* Pink */
+    color: #F06292;
+}
+
+.colour6 {
+    border-color: #81C784; /* Soft Green */
+    color: #81C784;
+}
+
+.colour7 {
+    border-color: #7986CB; /* Slate Blue */
+    color: #7986CB;
+}
+
+.colour8 {
+    border-color: #E57373; /* Rose Red */
+    color: #E57373;
+}
+
+.colour9 {
+    border-color: #BA68C8; /* Soft Purple */
+    color: #BA68C8;
+}
+
+.colour10 {
+    border-color: #7CB342; /* Apple Green */
+    color: #7CB342;
+}
+
+.colour11 {
+    border-color: #64B5F6; /* Sky Blue */
+    color: #64B5F6;
+}
+
+.colour12 {
+    border-color: #A1887F; /* Warm Taupe */
+    color: #A1887F;
+}
+
+.colour13 {
+    border-color: #FF8A65; /* Soft Orange */
+    color: #FF8A65;
+}
+
+.colour14 {
+    border-color: #C2185B; /* Cranberry */
+    color: #C2185B;
+}
+
+.colour15 {
+    border-color: #0097A7; /* Peacock Blue */
+    color: #0097A7;
+}
+
+.colour16 {
+    border-color: #FF7043; /* Burnt Orange */
+    color: #FF7043;
+}
+
+.pageControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageInput {
+    width: 30px;
+    text-align: center;
+    margin: 0;
+    margin-right: 3px;
+}
+
+.pageButton {
+    background-color: transparent; 
+    border: none; 
+    color: #000;
+    font-size: 20px; 
+    cursor: pointer; 
+    padding: 0; 
+}
+
+.pageButton:disabled {
+    color: rgba(0, 0, 0, 0.5);  
+    cursor: not-allowed;
+}
+
+#pageControlsBottom {
+    margin-top: auto;
+}
+
+#pageLengthSelect {
+    position: absolute;
+    right: 20px;
+}
+
+#downloadAllButton {
+    width: 300px;
+    position: absolute;
+    white-space: pre;
+    zoom: 0.75;
+    font-family: 'Courier New', Courier, 'Lucida Console', 'Monaco', 'Consolas', monospace;
+    font-weight: bold;
+    top: 10px;
+    right: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.math {
+    font-family: 'STIX Two Math', serif;
+}
+
+.sqrt {
+    font-family: 'Georgia', serif;
+}
+
+.root {
+    text-decoration: overline;
+}
+
+.var {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.footer {
+    position: absolute;
+}
+
+.closeButtonIcon {
+    width: 12px;
+    height: 12px;
+}
+
+#disclaimer {
+    position: relative;
+    margin: 0;
+}
+
+.closeButton {
+    height: 15px;
+    width: 15px;
+    border-radius: 7px;
+    border-width: 0px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0px;
+    justify-content: center;
+    padding-top: 2px;
+    position: absolute;
+    left: calc(100% - 15px);
+    top: 0px;
+}
+
+

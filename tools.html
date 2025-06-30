@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WACE Database – Tools</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <header></header>
+    <nav id="nav" class="navBar">
+    </nav>
+    <div class="content">
+        <h1>Tools:</h1>
+        <p>A list of tools that could be useful.</p>
+        <div class="box">
+            <h2><a href="https://wacehub.xyz/" target="_blank">Wace Hub (Ace the Wace)</a></h2>
+            <p>The hub for everything wace related. Still under construction.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://www.vaultofthewace.xyz/" target="_blank">Vault of the Wace</a></h2>
+            <p>One of the largest collections of wace resources on the internet. Objectively superior to all other wacevault clones.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://grimreaper2654.github.io/Booklet/main.html" target="_blank">Printable Booklet Maker</a></h2>
+            <p>A simple tool that turns a pdf into a printable booklet. You print double sided then fold along the middle to create a booklet. How to staple the booklet is not my problem.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://grimreaper2654.github.io/Chemistry-Revision/Game/main.html" target="_blank">Chemistry Revision</a></h2>
+            <p>A small thing I made to help me memorise the periodic table and common polyatomic ions in year 10.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://ed.toomwn.xyz/" target="_blank">Ed's Obsidian Notes</a></h2>
+            <p>My good friend Edward's notes website. He has great chemistry notes and some other stuff as well.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://demeter.toomwn.xyz/" target="_blank">Demeter</a></h2>
+            <p>A study tool using Google Docs viewer. Made by Edward.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://github.com/anonymoof1528/The-lit-anki" target="_blank">The Lit Anki</a></h2>
+            <p>This is a funny project EddietheEd and Anonymoof are working on to build confidence with literary terms and concepts using the famed application for memorisation, Anki!</p>
+            <p>This was originally made for Year 12 Literature ATAR students, but all students are welcome!</p>
+        </div>
+    </div>
+    <script>
+        fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('nav').innerHTML = data);
+        fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.querySelector('header').innerHTML = data);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

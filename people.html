@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WACE Database – People</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <header></header>
+    <nav id="nav" class="navBar">
+    </nav>
+    <div class="content">
+        <h1>Cool People:</h1>
+        <div class="box">
+            <h2><a href="https://github.com/GrimReaper2654" target="_blank">Choyu</a></h2>
+            <p>Creator of the WACE Database. Year 12 Student graduated in 2024, enjoys coding games and random coding projects.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://github.com/RJDJcool3" target="_blank">Rj</a></h2>
+            <p>Has absolutely no idea what he's doing, but it all ends up working out. Frequently causes half the website to break but patches it up before anyone notices.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://github.com/tvdk-sudoku" target="_blank">TVDK</a></h2>
+            <p>TVDK is a secretive person. <strong>[REDACTED]</strong> is <strong>[REDACTED]</strong> at <strong>[REDACTED]</strong>. <strong>[REDACTED]</strong> commits <strong>[REDACTED]</strong> and <strong>[REDACTED]</strong>.</strong></p>
+        </div>
+        <div class="box">
+            <h2><a href="https://github.com/EddieTheEd" target="_blank">Eddie the Ed</a></h2>
+            <p>Edward is extremely cracked at chemistry. Makes good notes and occasionally does random coding projects.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://github.com/MaceChettiyadan" target="_blank">Mace Chettiyadan the MacELine™ CEO</a></h2>
+            <p>Extremely talented software developer and aspiring businessman. Also, check out his youtube channel <a href="https://www.youtube.com/@macechettiyadan5625" target="_blank">here</a>.</p>
+        </div>
+        <div class="box">
+            <h2><a href="#">Shan-Mei Our Lord and Saviour</a></h2>
+            <p>An experiment conducted by several 99+ ATAR students has revealed that praying to this entity results in a 10% to 25% increase in spec marks.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://github.com/anonymoof1528" target="_blank">Anonymoof</a></h2>
+            <p>Very cool individual who has helped out a lot. Also known as 'Big D'.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://github.com/the-tOOMwn" target="_blank">The Toomwn</a></h2>
+            <p>A group of like minded individuals with the goal of establishing a 'town' on the internet composed of many personal websites with their notes for their ATAR subjects and various study resources. Many of the toomwn's sites has combusted due to stress from exams and a lack of time (including mine), but some of the websites are still being maintained and all the github repos are still intact. With a little effort and a lot of spare time, it might be enjoyable to dig through the Toomwn's histroy and see what you can find.</p>
+        </div>
+    </div>
+    <script>
+        fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('nav').innerHTML = data);
+        fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.querySelector('header').innerHTML = data);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

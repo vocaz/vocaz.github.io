@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WACE Database – Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <header></header>
+    <nav id="nav" class="navBar">
+    </nav>
+    <div class="content">
+        <h1>Games:</h1>
+        <p>ATAR and exams are stressful, take a moment to relax and have some fun. All games here are created by Choyu.</p>
+        <div class="box">
+            <h2><a href="https://github.com/GrimReaper2654/Spaceship-Game" target="_blank">Spaceship Game</a></h2>
+            <p>Top down 3rd person shooter with spaceships. Imagine diep.io but with spaceships instead of tanks. I made this at the start of year 11 and its my first project that used canvas.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://github.com/GrimReaper2654/Skibidi-Toilet" target="_blank">Skibidi Toilet Defence</a></h2>
+            <p>A 3rd person top down shooter with surprisingly little brainrot (only the enemy models). Made this in term 1 of year 12 when some year 7 students wanted me to make something skibidi toilet related.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://github.com/GrimReaper2654/Gacha-Game" target="_blank">Gacha Game</a></h2>
+            <p>An isekai anime themed gacha game with turn based combat I made in the middle of year 12. It used to be the only one of my games that ran on mobile but idk if mobile is still supported.</p>
+        </div>
+        <div class="box">
+            <h2><a href="https://github.com/GrimReaper2654/Taj-Game" target="_blank">Taj Game (Year 10 Compsci Project)</a></h2>
+            <p>Funny year 10 computer science project. It probably still has a lot of bugs, even after I tried to fix all of them. Might crash a lot and you will lose progress if you play. Having to avoid the fatal bugs as you play is definitely an intended feature.</p>
+        </div>
+    </div>
+    <script>
+        fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('nav').innerHTML = data);
+        fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.querySelector('header').innerHTML = data);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WACE Database</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <header></header>
+    <nav id="nav" class="navBar">
+    </nav>
+    <div id="search" class="search">
+        <h2>Advanced Search – Question Tagging</h2>
+        <div class="filter" style="display: none;">
+            <div class="filterLabel">Page is Duplicated: (used by script not user)</div>
+            <select id="isDuplicated" class="filterSelect">
+                <option value="no">NO</option>
+                <option value="yes">YES</option>
+            </select>
+        </div>
+        <div class="filter">
+            <div class="filterLabel">Subject: </div>
+            <select id="subjectSelect" class="filterSelect">
+                <option value="spec">Mathematics Specialist</option>
+                <option value="meth">Mathematics Methods</option>
+                <option value="apps">Mathematics Applications</option>
+                <option value="chem">Chemistry</option>
+                <option value="phys">Physics</option>
+                <option value="econs">Economics</option>
+            </select>
+        </div>
+        <div class="filter">
+            <div class="filterLabel">Year: </div>
+            <select id="yearSelect" class="filterSelect">
+                <option value="all">All Years</option>
+                <option value="2028">2028</option>
+                <option value="2027">2027</option>
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+            </select>
+        </div>
+        <div class="filter">
+            <div class="filterLabel">Calculator: </div>
+            <select id="calculatorSelect" class="filterSelect">
+                <option value="all">All</option>
+                <option value="free">Free</option>
+                <option value="assumed">Assumed</option>
+            </select>
+        </div>
+        <div class="filter">
+            <div class="filterLabel">Organisation: </div>
+            <select id="sourceSelect" class="filterSelect">
+                <option value="all">All</option>
+                <option value="WACE">WACE</option>
+                <option value="-">---- Example Schools (no content) ----</option>
+                <option value="PMOD">Perth Modern School</option>
+                <option value="CCGS">Christ Church Grammar School</option>
+                <option value="Rossmoyne">Rossmoyne Senior High School</option>
+                <option value="Willetton">Willetton Senior High School</option>
+            </select>
+        </div>
+        <div class="filter">
+            <div class="filterLabel">Assessment Type: </div>
+            <select id="typeSelect" class="filterSelect">
+                <option value="all">All</option>
+                <option value="WACE">WACE Exam</option>
+                <option value="-">---- Example Types (no content) ----</option>
+                <option value="Sem1">Sem 1 Exam</option>
+                <option value="Sem2">Sem 2 Exam</option>
+                <option value="Inv">Investigation</option>
+                <option value="Test">Test</option>
+            </select>
+        </div>
+        <div class="filter">
+            <div class="filterLabel">Tags: </div>
+            <select id="tagsSelect" class="filterSelect">
+                <option value="or">OR</option>
+                <option value="and">AND</option>
+                <option value="untagged">Untagged Only</option>
+            </select>
+            <div id="tagsContainer" class="tagsContainer"></div>
+        </div>
+        <div class="verticalSpacerSmall"></div>
+        <button id="searchButton" class="standardButton" onclick="search()">Search</button>
+        <div class="horizontalSpacer"></div>
+        <button class="standardButton" onclick="clearFilters()">Clear Filters</button>
+    </div>
+    <div class="content">
+        <h2 class="compact">Search Results</h2>
+        <div id="pageControlsTop" class="pageControls">
+            <button disabled id="prevPageButtonTop" class="pageButton" onclick="prevPage()">◄</button>
+            <div class="horizontalSpacerSmall"></div>
+            <input id="pageInputTop" type="number" value="0" class="pageInput" onchange="goToPage(parseInt(this.value)-1)"/>
+            <span>/ </span>
+            <span id="totalPagesTop">0</span>
+            <div class="horizontalSpacerSmall"></div>
+            <button disabled id="nextPageButtonTop" class="pageButton" onclick="nextPage()">►</button>
+            <span id="pageLengthSelect">
+                Questions per page
+                <select id="lengthSelect" onchange="renderPageResults()">
+                    <option value="5">1</option>
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="1000000">Infinite</option>
+                </select>
+            </span>
+        </div>
+        <div id="searchResults" class="searchResults">
+            <h3>Press 'Search' to get started.</h3>
+        </div>
+        <div id="pageControlsBottom" class="pageControls">
+            <button disabled id="prevPageButtonBottom" class="pageButton" onclick="prevPage()">◄</button>
+            <div class="horizontalSpacerSmall"></div>
+            <input id="pageInputBottom" type="number" value="0" class="pageInput" onchange="goToPage(parseInt(this.value)-1)"/>
+            <span>/ </span>
+            <span id="totalPagesBottom">0</span>
+            <div class="horizontalSpacerSmall"></div>
+            <button disabled id="nextPageButtonBottom" class="pageButton" onclick="nextPage()">►</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="left-content">
+                <h4 id="activeQuestion">Select question to modify tags.</h4>
+                <div id="modifyTags" class="tagsContainer compactTagsContainer"></div>
+            </div>
+            <div class="right-content">
+                <input type="text" id="githubToken" placeholder="Enter your GitHub token" />
+                <button class="commit-button" onclick="createPullRequest()">Submit Pull Request</button>
+            </div>
+        </div>
+    </footer>
+    <script>
+        fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('nav').innerHTML = data);
+        fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.querySelector('header').innerHTML = data);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WACE Database – Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <header></header>
+    <nav id="nav" class="navBar">     
+    </nav>
+    <div class="content">
+        <h2>About Us</h2>
+        <p>
+            Welcome to <strong>WACE DATABASE</strong>, the current largest (and only) database of past WACE questions with a question filtering and sorting system. Our easy to use tags system provides a simple way to get practice questions on just about any topic, making revising for WACE much easier, especially if you're not grinding all the WACE past papers. PDF downloads are avalaible for all questions, so you can easily print out questions and do them under simulated exam conditions.
+        </p>
+        <p>
+            We believe that the med and perfect ATAR tryhards are simply too good, which is why we have made it our mission to help everybody else mimic a fraction of their power. In theory, those who don't plan on doing all the WACE past papers will recieve great benefit from having sorted past questions to revise with. Additionally everybody benefits when revising weak points or in the earlier months before the entire course is learnt as the time taken to find questions to revise is greatly reduced.
+        </p>
+        <p>
+            Join our discord at <a href="https://discord.gg/a49g3r6buk " target="_blank">here</a>.
+        </p>
+        <p>
+            WACE Database does not own any of the WACE exam questions on this website. They belong to SCSA. 
+        </p>
+        <h2>Features</h2>
+        <h3>Targeted Revision</h3>
+        <p>
+            Want to focus on just a topic, or don't want to see topics you haven't learnt yet? Wace Database has an advanced question tagging system allowing for questions of a specific topic or type to be easily located. This makes finding the questions you want much more convenient.
+        </p>
+        <h3>Easily Find Questions</h3>
+        <p>
+            Looking for a certain question from a past WACE paper? We've got you covered. The search bar in the top right corner uses a fuzzy search to locate a question by subject, year and question number. Furthermore, the url linking to the question can be sent to friends to easily reference or share the question.
+        </p>
+        <h2>What We Are Working On</h2>
+        <p>
+            Our small team is working hard every day, so please remember that WACE Database is very much a work in progress. If you want questions to be tagged or the database is missing questions from your subject, feel free to send us some feedback! We are currently in the process of scanning and all the WACE papers for Methods, Physics, Chemistry and Economics. As of late, we have implemented negative tag searching, better website layouts, more scanned papers, tagging all of the spec WACE papers and many, many bug fixes. Remember to check back every now and then to see what is new on the site! If you are a github user, we would greatly appreciate any contributions or a star if this project has been any help to you. 
+        </p>
+        <h2>Tags Guide</h2>
+        <p>
+            Our database of past questions utilises a tags system to keep them organised. Each subject has its own set of tags, some of which describe the content of the question and some describe the type of question (short answer, multi choice, etc). Most of the content tags are collapsed under tag groups and organised by topic, and can be revealed by clicking on the arrow next to the corresponding tag group. Subtags as well as tag groups can be selected and act in the exact same way as other tags. Usually, questions with a subtag will also have the tag group of that subtag in its tags. When searching for tags, the 'or' mode will include all questions with at least one selected tag and 'and' mode will find all questions with all selected tags (there could be none).
+        </p>
+        <p>
+            Negative tags are now supported. If you click a tag twice, it will become a nagative filter and all questions with that tag will be ignored. You can reset the tag back to neutral by clicking it again. Negative tags work the same way reguardless of whether the mode is set to 'AND' or 'OR'. 
+        </p>
+        <p>
+            If you are struggling to expand the tag groups, you will need to click on the arrow. You will also need to click on the check box to toggle the tag's states. This is an intentional feature, I know that the buttons are quite small, but if you could click anywhere, it would lead to a lot of unintended actions which really ruins the experience according to out beta testers.
+        </p>
+        <h2>General ATAR Tips and Tricks and Teacher Quotes</h2>
+        <p>
+            Here are some tips we have compiled from our own experience. You don't have to agree. Good luck with ATAR!
+        </p>
+        <h4>General:</h4>
+        <ul>
+            <li>Use WACE vaults and do more past papers. Nothing beats more practice and sinking in tens of hours every day. </li>
+        </ul>
+        <h4>Chemistry:</h4>
+        <ul>
+            <li>Memorise the marking keys for theory questions. Do it no matter what your teacher says, there's no point understanding the theory if you don't get the marks. However, do try to understand the theory as well, it does help.</li>
+            <li>"You snooze, you loose!" – Ms Pilling 2023</li>
+        </ul>
+        <h4>Physics:</h4>
+        <ul>
+            <li>Don't bother trying to undestand the standard model or special relativity. Just turn off your brain and plug in formulas.</li>
+            <li>"Stay away from me with your plague" – Mr Norrie 2024</li>
+        </ul>
+        <h4>Methods:</h4>
+        <ul>
+            <li>Leave the questions with 'simplify' until the end. It is time consuming to simplify equations by hand and it is easy to miss an obscure step so don't spend too much time on it. </li>
+        </ul>
+        <h4>Specialist:</h4> 
+        <ul>
+            <li>Be clear, logical and accurate in your working out. Always show all steps for full marks and potential followthrough. </li>
+            <li>Let it go, don't let a bad question become a bad test. You can even recover from a single bad test or exam. </li>
+            <li>Generally, a mark a minute. Give the easy questions the time they deserve, leave the hard questions till last and don't let a hard 4 mark question affect your timing or mindset. </li>
+            <li>Leave the questions with 'simplify' until the end. It is time consuming to simplify equations by hand and it is easy to miss an obscure step so don't spend too much time on it. </li>
+        </ul>
+    </div>
+    <script>
+        fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('nav').innerHTML = data);
+        fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.querySelector('header').innerHTML = data);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
