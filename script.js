@@ -583,8 +583,8 @@ async function createPullRequest() {
     }
 
     // Your GitHub repository details
-    const repoOwner = 'GrimReaper2654';
-    const repoName = 'WACE-Database';
+    const repoOwner = 'vocaz';
+    const repoName = 'vocaz.github.io';
     const filePath = 'questions.json';
     const branchName = `update-json-${Date.now()}`;
 
