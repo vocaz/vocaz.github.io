@@ -7826,7 +7826,8 @@
                 "Differentiation",
                 "Antidifferentiation",
                 "Exponential",
-                "Logarithmic"
+                "Logarithmic",
+                "Logarithms"
             ]
         },
         {
@@ -7850,7 +7851,8 @@
             "calculator": "free",
             "tags": [
                 "Functions",
-                "Logarithmic"
+                "Logarithmic",
+                "Logarithms"
             ]
         },
         {
@@ -7882,7 +7884,8 @@
                 "Exponential",
                 "Calculus",
                 "Differentiation",
-                "Chain Rule"
+                "Chain Rule",
+                "Logarithms"
             ]
         },
         {
@@ -8027,7 +8030,8 @@
                 "Differentiation",
                 "Antidifferentiation",
                 "Fundamental Theorem",
-                "Chain Rule"
+                "Chain Rule",
+                "Logarithms"
             ]
         },
         {
@@ -8067,7 +8071,8 @@
             "tags": [
                 "Functions",
                 "Logarithmic",
-                "Graphing"
+                "Graphing",
+                "Logarithms"
             ]
         },
         {
